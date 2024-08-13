@@ -12,3 +12,6 @@ This repository contains information related to microservices and how to impleme
         end
 
 ```
+1. In monolith every feature implemented under same 
+2. One micro service is developing for a single feature
+
