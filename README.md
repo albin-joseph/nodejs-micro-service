@@ -46,3 +46,6 @@ This repository contains information related to microservices and how to impleme
         - Database schema/structure might change unexpectedly
         - Some services might function more efficiently with different type of DB's(sql vs nosql)
     - Services will never, ever reach in to another services database
+        - We can resolve by using communication startergies between the services
+        - Sync: *Services communicate with each other using direct requests*
+        - Async: *Services communicate with each other using events*
