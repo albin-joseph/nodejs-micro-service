@@ -55,3 +55,7 @@ This repository contains information related to microservices and how to impleme
             - The entire request only fast as the slowest request
             - Can easily introduce the webs of requests
         - Async: *Services communicate with each other using events*
+            - Service have zero dependencies on other services
+            - Service is extremely fast
+            - Data duplication. Paying for extra storage and extra DB
+            - Harder to understand
