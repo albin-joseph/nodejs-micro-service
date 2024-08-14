@@ -48,4 +48,10 @@ This repository contains information related to microservices and how to impleme
     - Services will never, ever reach in to another services database
         - We can resolve by using communication startergies between the services
         - Sync: *Services communicate with each other using direct requests*
+            - Conceptually easy to understand
+            - Requesting service doen't need database
+            - Introduces a dependency between the services
+            - If any inter service request failes, the overall request fails
+            - The entire request only fast as the slowest request
+            - Can easily introduce the webs of requests
         - Async: *Services communicate with each other using events*
