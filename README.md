@@ -2,6 +2,8 @@
 This repository contains information related to microservices and how to implement them in Node.js. It is created for learning purposes. The information has been gathered from various sources, including the internet, online learning platforms, YouTube, and more.
 
 1. In monolith every feature implemented under same 
+    - Entire application sharing the component
+    - If any service or any component failed entire application will crashes
 
  ``` mermaid
     flowchart LR;
@@ -14,6 +16,8 @@ This repository contains information related to microservices and how to impleme
 
 ```
 2. One micro service is developing for a single feature
+    - Every feature/service hosted as separted micro services.
+    - If any service or feature failed, it will not affect the other service or faeture.
 
 ``` mermaid
     flowchart LR;
