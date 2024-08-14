@@ -1,6 +1,8 @@
 # NodeJS Micro Servive
 This repository contains information related to microservices and how to implement them in Node.js. It is created for learning purposes. The information has been gathered from various sources, including the internet, online learning platforms, YouTube, and more.
 
+### What is micro service and monolith service
+
 1. In monolith every feature implemented under same 
     - Entire application sharing the component
     - If any service or any component failed entire application will crashes
@@ -37,3 +39,10 @@ This repository contains information related to microservices and how to impleme
 
 ```
 
+### Challenges in micro services
+- Data management between the services
+    - Every service needs there own database
+        - We want each service to run independently of other service
+        - Database schema/structure might change unexpectedly
+        - Some services might function more efficiently with different type of DB's(sql vs nosql)
+    - Services will never, ever reach in to another services database
