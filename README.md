@@ -65,3 +65,30 @@ This repository contains information related to microservices and how to impleme
 - **01Project**
     - Project for create & show post & comments
     - We create different service for handling posts adn comments
+
+
+``` mermaid
+    flowchart LR
+        subgraph Micro Services
+        direction LR
+            subgraph POSTS
+            direction LR
+            step1["Posts"]
+            step2["Create a post"]
+            step3["List all posts"]
+            step1 --> step2
+            step1 --> step3
+            end
+
+            subgraph COMMENTS
+            direction LR
+            step4["Comments"]
+            step5["Create a comment"]
+            step6["List all comments"]
+            step4 --> step5
+            step4 --> step6
+            end
+        end
+```
+
+    
