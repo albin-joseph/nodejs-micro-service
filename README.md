@@ -64,7 +64,7 @@ This repository contains information related to microservices and how to impleme
 
 - **01Project**
     - Project for create & show post & comments
-    - We create different service for handling posts adn comments
+    - We create different service for handling posts and comments
 
 
 ``` mermaid
