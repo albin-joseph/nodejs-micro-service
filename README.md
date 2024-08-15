@@ -59,3 +59,9 @@ This repository contains information related to microservices and how to impleme
             - Service is extremely fast
             - Data duplication. Paying for extra storage and extra DB
             - Harder to understand
+
+## Projects
+
+- **01Project**
+    - Project for create & show post & comments
+    - We create different service for handling posts adn comments
