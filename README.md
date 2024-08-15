@@ -62,8 +62,8 @@ This repository contains information related to microservices and how to impleme
 
 ## Projects
 
-- **01Project**
-    - Project for create & show post & comments
+- **blog**
+    - Project for create & show, post & comments
     - We create different service for handling posts and comments
 
 
