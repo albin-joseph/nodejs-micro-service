@@ -19,6 +19,7 @@ export default ({postId}) => {
                 <label>New Comment</label>
                 <input 
                     className="form-control" 
+                    style={{marginBottom: "20px"}}
                     value={content} 
                     onChange={(e) => setContent(e.target.value)}
                 />

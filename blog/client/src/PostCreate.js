@@ -16,6 +16,7 @@ export default () => {
                 <label>Title</label>
                 <input 
                     className="form-control" 
+                    style={{marginBottom: "20px"}}
                     value={title} 
                     onChange={(e) => setTitle(e.target.value)}
                 />
