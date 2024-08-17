@@ -27,3 +27,6 @@ Please see the overall structure of the client app
     - It's an node js express application
     - There are two apis: list all comments and create comments
     - Comments create under particular *post id*, this dependency we needs to send along with each apis
+- *Client (ReactJS APP)*
+    - It's  ReactJS app. This is not the part of micro service
+    - This client is created to demonstrate how to consume the microservice from client apps
