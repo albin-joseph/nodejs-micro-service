@@ -91,4 +91,21 @@ This repository contains information related to microservices and how to impleme
         end
 ```
 
+
+#
+
+## Git Guidelines
+
+- Base branch is *main*
+- To create new branch: `git checkout -b <branch name>`
+- To stage the chnages: `git add .`
+- To commit changes: `git commit -am <commit message>`
+- To push the changes to remote: `git push`
+    - If new branch is not in remote: `git branch --set-upstream-to=<remote>/<branch>`
+- To change branch: `git checkout <branch name>`
+- To create tag: `git tag -a <tag_name> -m "<Tag message>"`
+- To push all tags: `git push origin --tags`
+- To list all tags: `git tag`
+
+
     
