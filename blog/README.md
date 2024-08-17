@@ -18,3 +18,12 @@ Please see the overall structure of the client app
         step3 --> step5
         end
 ```
+
+### Blog
+- *Posts Micro Service*
+    - It's an node js express application
+    - There are two apis: list all posts and create posts
+- *Comments Micro Service*
+    - It's an node js express application
+    - There are two apis: list all comments and create comments
+    - Comments create under particular *post id*, this dependency we needs to send along with each apis
