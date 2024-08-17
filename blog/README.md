@@ -30,3 +30,10 @@ Please see the overall structure of the client app
 - *Client (ReactJS APP)*
     - It's  ReactJS app. This is not the part of micro service
     - This client is created to demonstrate how to consume the microservice from client apps
+
+### Asyn EventBus Implementation
+- Many different implementations. RabbitMQ, Kafka, NATS
+- Receive events, publish them to listners
+- Many different subtle features that make async communication way easier or way harder
+- We are going to build our own event bus using Express. It will not implement the vast majority or features a normal bus has.
+- Yes, for our next app we will use a production grade, open source event bus.
