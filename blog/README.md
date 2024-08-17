@@ -37,3 +37,15 @@ Please see the overall structure of the client app
 - Many different subtle features that make async communication way easier or way harder
 - We are going to build our own event bus using Express. It will not implement the vast majority or features a normal bus has.
 - Yes, for our next app we will use a production grade, open source event bus.
+
+### Update Blog
+
+We are going to update the blog application by introducing more servives for optimising.
+We are going to implement the event service. We are going to add two services for **event bus** implementation.
+
+- *event-bus Micro Service*
+    - This is the basic implementation of event bus. When a post creation or comment creation happens an event fire.
+    - This event 2 information, event type and data.
+- *query Micro service*
+    - This service for optimise the entire system by minimise/optimse the api call
+    - This will aggregate the service
