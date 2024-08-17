@@ -4,12 +4,17 @@ This is a simple blog project to demonstarte micro service. In this project ther
 
 Please see the overall structure of the client app
 
-```mermaid
-    flowchart TB
-    subgraph Blog
+``` mermaid
+    flowchart TD
+     subgraph Blog 
         step1["App"]
         step2["Create posts"]
+        step1 --> step2
         step3["List all posts"]
+        step1 --> step3
         step4["Create comments"]
+        step3 --> step4
         step5["List all comments"]
+        step3 --> step5
+        end
 ```
