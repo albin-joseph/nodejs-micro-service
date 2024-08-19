@@ -93,6 +93,15 @@ This repository contains information related to microservices and how to impleme
 
 #
 
+## Docker
+
+- **What is Docket?**
+    - Docker creates series of things call containers. A container is an isolated computing environment.
+    - In micro services each services run in each container. If we need to create a copy of service, we will create a new container of that service.
+    - Docker solve the following problems
+        - Dependencies needed for the project or services to run
+        - How to start and run the app
+
 ## Git Guidelines
 
 - Base branch is *main*
