@@ -46,6 +46,8 @@ We are going to implement the event service. We are going to add two services fo
 - *event-bus Micro Service*
     - This is the basic implementation of event bus. When a post creation or comment creation happens an event fire.
     - This event 2 information, event type and data.
-- *query Micro service*
+- *query Micro Service*
     - This service for optimise the entire system by minimise/optimse the api call
     - This will aggregate the service
+- *moderation Micro Service*
+    - This service is using for moderate the comments.
