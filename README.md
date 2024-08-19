@@ -111,9 +111,16 @@ This repository contains information related to microservices and how to impleme
         direction TB
             subgraph Virtual Machines
             direction LR
-            step1["Node"]
-            step2["Node"]
-            step3["Node"]
+                subgraph Node env1
+                    subgraph container1
+                    stepa["Post Service"]
+                    end
+                end
+                subgraph Node env 2
+                    subgraph container2
+                    stepb["comment Service"]
+                    end
+                end
             end
             
             subgraph Program to manage every thing in the cluster
