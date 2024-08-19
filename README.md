@@ -101,6 +101,26 @@ This repository contains information related to microservices and how to impleme
     - Docker solve the following problems
         - Dependencies needed for the project or services to run
         - How to start and run the app
+- **What is Kubernetes?**
+    - Kubernetes a tool for running a bunch of different containers.
+    - We give it some configuration to describe how we want our containers to run and interact with each other.
+
+``` mermaid
+    flowchart TB
+        subgraph Kubernetes Cluster
+        direction TB
+            subgraph Virtual Machines
+            direction LR
+            step1["Node"]
+            step2["Node"]
+            step3["Node"]
+            end
+            
+            subgraph Program to manage every thing in the cluster
+            step4["master"]
+            end
+        end
+```
 
 ## Git Guidelines
 
