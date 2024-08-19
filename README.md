@@ -93,6 +93,42 @@ This repository contains information related to microservices and how to impleme
 
 #
 
+## Docker
+
+- **What is Docket?**
+    - Docker creates series of things call containers. A container is an isolated computing environment.
+    - In micro services each services run in each container. If we need to create a copy of service, we will create a new container of that service.
+    - Docker solve the following problems
+        - Dependencies needed for the project or services to run
+        - How to start and run the app
+- **What is Kubernetes?**
+    - Kubernetes a tool for running a bunch of different containers.
+    - We give it some configuration to describe how we want our containers to run and interact with each other.
+
+``` mermaid
+    flowchart TB
+        subgraph Kubernetes Cluster
+        direction TB
+            subgraph Virtual Machines
+            direction LR
+                subgraph Node env1
+                    subgraph container1
+                    stepa["Post Service"]
+                    end
+                end
+                subgraph Node env 2
+                    subgraph container2
+                    stepb["comment Service"]
+                    end
+                end
+            end
+            
+            subgraph Program to manage every thing in the cluster
+            step4["master"]
+            end
+        end
+```
+
 ## Git Guidelines
 
 - Base branch is *main*
