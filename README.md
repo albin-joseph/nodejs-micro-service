@@ -98,6 +98,9 @@ This repository contains information related to microservices and how to impleme
 Docker makes it really easy to install and run software without worrying about setup or dependencies
 
 - **What is Docket?**
+    - Docker is a pltform or ecosystem around creating and running containers.
+        - **Image**: Single file with all the dependencies and configurations required to run a program.
+        - **Container**: Instance of an image. Runs a program.
     - Docker creates series of things call containers. A container is an isolated computing environment.
     - In micro services each services run in each container. If we need to create a copy of service, we will create a new container of that service.
     - Docker solve the following problems
