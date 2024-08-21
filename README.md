@@ -113,6 +113,8 @@ Docker makes it really easy to install and run software without worrying about s
 - **Docker Commands**
     - Run an image: `docker run <image name>`
     - Override default command: `docker run <image name> <echo <message> | ls>`
+    - List all running containers: `docker ps`
+    - List all containers ever created: `docker ps --all`
 - **What is Kubernetes?**
     - Kubernetes a tool for running a bunch of different containers.
     - We give it some configuration to describe how we want our containers to run and interact with each other.
