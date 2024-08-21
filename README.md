@@ -108,6 +108,11 @@ Docker makes it really easy to install and run software without worrying about s
     - Docker solve the following problems
         - Dependencies needed for the project or services to run
         - How to start and run the app
+    - When installaing Docker, there will be a virtual Linux machine along with that.
+
+- **Docker Commands**
+    - Run an image: `docker run <image name>`
+    - Override default command: `docker run <image name> <echo <message> | ls>`
 - **What is Kubernetes?**
     - Kubernetes a tool for running a bunch of different containers.
     - We give it some configuration to describe how we want our containers to run and interact with each other.
@@ -149,7 +154,3 @@ Docker makes it really easy to install and run software without worrying about s
 - To push all tags: `git push origin --tags`
 - To list all tags: `git tag`
 
-
-
-
-    
