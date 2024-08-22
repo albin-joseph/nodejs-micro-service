@@ -97,6 +97,31 @@ This repository contains information related to microservices and how to impleme
 
 Docker makes it really easy to install and run software without worrying about setup or dependencies
 
+#### Docker Image creation process
+
+``` mermaid
+    flowchart TB;
+        step1["Docker File"]
+        step1 ~~~|"Configuration to define how our container should behave"|step1
+        step2["Docker Client"]
+        step1-->step2
+        step3["Docker Server"]
+        step3 ~~~|"Take all the configuration and make a usable image"|step3
+        step2-->step3
+        step4["Usable Image"]
+        step3-->step4
+```
+
+#### How create a Docker file
+``` mermaid
+    flowchart TB;
+        step1["Specify a base image"]
+        step2["Run some commands to install additional programs"]
+        step1-->step2
+        step3["Specify a command to run on container startup"]
+        step2-->step3
+```
+
 - **What is Docket?**
     - Docker is a pltform or ecosystem around creating and running containers.
         - **Image**: Single file with all the dependencies and configurations required to run a program.
