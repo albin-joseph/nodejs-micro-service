@@ -188,3 +188,4 @@ Docker makes it really easy to install and run software without worrying about s
 - To create tag: `git tag -a <tag_name> -m "<Tag message>"`
 - To push all tags: `git push origin --tags`
 - To list all tags: `git tag`
+
