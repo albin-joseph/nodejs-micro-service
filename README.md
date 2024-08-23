@@ -113,6 +113,10 @@ Docker makes it really easy to install and run software without worrying about s
 ```
 
 #### How create a Docker file
+
+- A docker file will be the file with name *Dockerfile*, without any file extensions.
+- Please refer dockerSample folder for getting more idea.
+
 ``` mermaid
     flowchart TB;
         step1["Specify a base image"]
