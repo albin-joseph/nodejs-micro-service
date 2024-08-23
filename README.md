@@ -116,6 +116,11 @@ Docker makes it really easy to install and run software without worrying about s
 
 - A docker file will be the file with name *Dockerfile*, without any file extensions.
 - Please refer dockerSample folder for getting more idea.
+- Dockerfile each instructions have two parts
+    - Instruction telling Docker Server what to do
+    - Argument to the instruction
+- Why did we use alpine as a base image?
+    - They comes with a preinstalled set of programs that are useful.
 
 ``` mermaid
     flowchart TB;
@@ -152,6 +157,7 @@ Docker makes it really easy to install and run software without worrying about s
     - Stop a container: `docker stop <container id>`
     - Kill a container: `docker kill <container id>`
     - Executing commands in running containers: `docker exec -t <container id> <command>`
+
 - **What is Kubernetes?**
     - Kubernetes a tool for running a bunch of different containers.
     - We give it some configuration to describe how we want our containers to run and interact with each other.
