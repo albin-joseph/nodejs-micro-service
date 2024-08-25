@@ -95,12 +95,102 @@ This repository contains information related to microservices and how to impleme
 
 ## Docker
 
+Docker makes it really easy to install and run software without worrying about setup or dependencies
+
+#### Docker Image creation process
+
+``` mermaid
+    flowchart TB;
+        step1["Docker File"]
+        step1 ~~~|"Configuration to define how our container should behave"|step1
+        step2["Docker Client"]
+        step1-->step2
+        step3["Docker Server"]
+        step3 ~~~|"Take all the configuration and make a usable image"|step3
+        step2-->step3
+        step4["Usable Image"]
+        step3-->step4
+```
+
+#### How create a Docker file
+
+- A docker file will be the file with name *Dockerfile*, without any file extensions.
+- Please refer dockerSample folder for getting more idea.
+- Dockerfile each instructions have two parts
+    - Instruction telling Docker Server what to do
+    - Argument to the instruction
+- Why did we use alpine as a base image?
+    - They comes with a preinstalled set of programs that are useful.
+
+``` mermaid
+    flowchart TB;
+        step1["Specify a base image"]
+        step2["Run some commands to install additional programs"]
+        step1-->step2
+        step3["Specify a command to run on container startup"]
+        step2-->step3
+```
+
 - **What is Docket?**
+    - Docker is a pltform or ecosystem around creating and running containers.
+        - **Image**: Single file with all the dependencies and configurations required to run a program.
+        - **Container**: Instance of an image. Runs a program.
+        - **Docker Client**: Tools that we are going to issue commands
+        - **Docker Server**: Tools that responsible for creating images, running, containers, etc
     - Docker creates series of things call containers. A container is an isolated computing environment.
     - In micro services each services run in each container. If we need to create a copy of service, we will create a new container of that service.
     - Docker solve the following problems
         - Dependencies needed for the project or services to run
         - How to start and run the app
+    - When installaing Docker, there will be a virtual Linux machine along with that.
+
+
+**Docker is a platform that simplifies the process of building, testing, and deploying applications by using containerization. Containerization allows developers to package an application and its dependencies into a standardized unit called a container, ensuring that the application runs consistently across different environments.**
+
+- **Docker**
+        - Docker is a set of platform-as-a-service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. It provides tools and services to create, deploy, and manage containers.
+
+- **Docker Image**
+        - A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Docker images are built using a Dockerfile, which contains instructions for assembling the image. Once built, an image can be shared and reused.
+
+        - Immutable: Once an image is created, it doesn’t change. Any updates require creating a new image.
+
+        - Layers: Images are made up of layers, with each layer representing a step in the Dockerfile. Layers are cached, which speeds up the build process.
+
+- **Docker Container**
+    - A Docker container is a runtime instance of a Docker image. It is a lightweight, isolated environment where the application runs. Containers are designed to be portable and consistent across different environments, such as development, testing, and production.
+
+    = Isolated: Containers run in their isolated user space, allowing multiple containers to run on the same host without interfering with each other.
+
+    - Ephemeral: Containers can be stopped, started, deleted, and recreated easily, making them highly flexible and suitable for dynamic scaling.
+     
+
+- **How They Work Together:**
+        - Docker Image is like a blueprint for your application.
+        - Docker Container is a running instance of that image.
+
+    - **In summary:**
+        - Docker is the tool/platform.**
+        - Docker Image is the template.
+        - Docker Container is the instance created from the template.
+
+- **Docker Commands**
+    - Build docker image: `docker build .`
+    - Run an image: `docker run <image name>`
+    - Override default command: `docker run <image name> <echo <message> | ls>`
+    - List all running containers: `docker ps`
+    - List all containers ever created: `docker ps --all`
+    - Create a container: `docker create`
+    - Start a container: `docker start`
+    - `docker run` = `docker create` + `docker start`
+    - Remove containers: `docker system prune`
+    - Retreiving all logs: `docker logs <container id>`
+    - Stop a container: `docker stop <container id>`
+    - Kill a container: `docker kill <container id>`
+    - Executing commands in running containers: `docker exec -t <container id> <command>`
+    - Tagging an Image: `docker build -t <docker id>/<repo or project name> : <version>`
+    - docker port mapping: `docker run -p <route incomming port>:<port route inside the container> <image name>`
+
 - **What is Kubernetes?**
     - Kubernetes a tool for running a bunch of different containers.
     - We give it some configuration to describe how we want our containers to run and interact with each other.
@@ -143,6 +233,3 @@ This repository contains information related to microservices and how to impleme
 - To list all tags: `git tag`
 
 
-
-
-    
