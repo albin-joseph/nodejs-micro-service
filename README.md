@@ -189,6 +189,7 @@ Docker makes it really easy to install and run software without worrying about s
     - Kill a container: `docker kill <container id>`
     - Executing commands in running containers: `docker exec -t <container id> <command>`
     - Tagging an Image: `docker build -t <docker id>/<repo or project name> : <version>`
+    - docker port mapping: `docker run -p <route incomming port>:<port route inside the container> <image name>`
 
 - **What is Kubernetes?**
     - Kubernetes a tool for running a bunch of different containers.
