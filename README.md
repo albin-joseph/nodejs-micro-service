@@ -229,7 +229,11 @@ Docker makes it really easy to install and run software without worrying about s
 - **Kubernetes Config Files**
     - Tells Kubernetes about different Deployments, Pods and Services (referred to as *Objects*)that we want to create.
     - Config file should be a YAML file
+    - Always store these files with our project source code.
     - We can create Objects without config files [Do not do this]. Config files provide a precise definition of what your cluster is running.
+    - k8s is the shortform to represent kubernetes. Where we are putting all the kubernetes config files
+    - To create Pod, please run the command on the location where the config file written `kubectl apply -f <config_file_name>.yaml`
+    - To list the pods `kubectl get pods`
 
 
 ## Git Guidelines
