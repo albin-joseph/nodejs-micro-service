@@ -220,11 +220,17 @@ Docker makes it really easy to install and run software without worrying about s
         end
 ```
 
-- **Kubernets Cluster** : A coolections of nodes and a master to manage them.
+- **Kubernetes Cluster** : A coolections of nodes and a master to manage them.
 - **Node** : A virtual machine that will run our containers.
 - **Pod** : More or less a running container. Technically a pod can run multiple containers.
 - **Deployment** : Monitors a set of pods, make sure they are running and restart them if they crash.
 - **Service** : Provide an easy to remember URL to access a running container.
+
+- **Kubernetes Config Files**
+    - Tells Kubernetes about different Deployments, Pods and Services (referred to as *Objects*)that we want to create.
+    - Config file should be a YAML file
+    - We can create Objects without config files [Do not do this]. Config files provide a precise definition of what your cluster is running.
+
 
 ## Git Guidelines
 
