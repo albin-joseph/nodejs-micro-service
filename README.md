@@ -151,16 +151,17 @@ Docker makes it really easy to install and run software without worrying about s
         - Docker is a set of platform-as-a-service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. It provides tools and services to create, deploy, and manage containers.
 
 - **Docker Image**
-        - A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Docker images are built using a Dockerfile, which contains instructions for assembling the image. Once built, an image can be shared and reused.
+    - A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Docker images are built using a Dockerfile, which contains instructions for assembling the image. Once built, an image can be shared and reused.
 
-        - Immutable: Once an image is created, it doesn’t change. Any updates require creating a new image.
-
-        - Layers: Images are made up of layers, with each layer representing a step in the Dockerfile. Layers are cached, which speeds up the build process.
 
 - **Docker Container**
     - A Docker container is a runtime instance of a Docker image. It is a lightweight, isolated environment where the application runs. Containers are designed to be portable and consistent across different environments, such as development, testing, and production.
 
-    = Isolated: Containers run in their isolated user space, allowing multiple containers to run on the same host without interfering with each other.
+    - Immutable: Once an image is created, it doesn’t change. Any updates require creating a new image.
+
+    - Layers: Images are made up of layers, with each layer representing a step in the Dockerfile. Layers are cached, which speeds up the build process.
+
+    - Isolated: Containers run in their isolated user space, allowing multiple containers to run on the same host without interfering with each other.
 
     - Ephemeral: Containers can be stopped, started, deleted, and recreated easily, making them highly flexible and suitable for dynamic scaling.
      
@@ -170,7 +171,7 @@ Docker makes it really easy to install and run software without worrying about s
         - Docker Container is a running instance of that image.
 
     - **In summary:**
-        - Docker is the tool/platform.**
+        - Docker is the tool/platform.
         - Docker Image is the template.
         - Docker Container is the instance created from the template.
 
@@ -218,6 +219,12 @@ Docker makes it really easy to install and run software without worrying about s
             end
         end
 ```
+
+- **Kubernets Cluster** : A coolections of nodes and a master to manage them.
+- **Node** : A virtual machine that will run our containers.
+- **Pod** : More or less a running container. Technically a pod can run multiple containers.
+- **Deployment** : Monitors a set of pods, make sure they are running and restart them if they crash.
+- **Service** : Provide an easy to remember URL to access a running container.
 
 ## Git Guidelines
 
