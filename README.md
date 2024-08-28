@@ -192,9 +192,9 @@ Docker makes it really easy to install and run software without worrying about s
     - Tagging an Image: `docker build -t <docker id>/<repo or project name> : <version>`
     - docker port mapping: `docker run -p <route incomming port>:<port route inside the container> <image name>`
 
-- **What is Kubernetes?**
-    - Kubernetes a tool for running a bunch of different containers.
-    - We give it some configuration to describe how we want our containers to run and interact with each other.
+## Kubernetes
+- Kubernetes a tool for running a bunch of different containers.
+- We give it some configuration to describe how we want our containers to run and interact with each other.
 
 ``` mermaid
     flowchart TB
@@ -234,6 +234,35 @@ Docker makes it really easy to install and run software without worrying about s
     - k8s is the shortform to represent kubernetes. Where we are putting all the kubernetes config files
     - To create Pod, please run the command on the location where the config file written `kubectl apply -f <config_file_name>.yaml`
     - To list the pods `kubectl get pods`
+
+### Kubernetes - Understand Pod Specs
+
+``` mermaid
+    flowchart TD;
+        step1["apiVersion: v1"]
+        step1 ~~~|"k8s is extensible-we can add our own custom objects. This specify set of objects we want k8s to llok at"|step1
+        step2["kind:Pod"]
+        step2 ~~~|"The type of object we want to create"|step2
+        step1-->step2
+        step3["metadata"]
+        step3 ~~~|"Config option for the object we are about to create"|step3
+        step2-->step3
+        step4["name:posts"]
+        step4 ~~~|"When pod create give a name 'posts'"|step4
+        step3-->step4
+        step5["spec"]
+        step5 ~~~|"The exact attribute we want to apply to object we are about to create"|step5
+        step4-->step5
+        step6["containers"]
+        step6 ~~~|"We can create many containers in a single pod"|step6
+        step5-->step6
+        step7["name:posts"]
+        step7 ~~~|"Make a container with a name 'posts'"|step7
+        step6-->step7
+        step8["image:blog/posts:0.0.1"]
+        step8 ~~~|"The exact image we want to use"|step8
+        step7-->step8
+```
 
 
 ## Git Guidelines
