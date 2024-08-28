@@ -264,6 +264,13 @@ Docker makes it really easy to install and run software without worrying about s
         step7-->step8
 ```
 
+### Kubernetes Commands
+- `kubectl get pods` : Print out information about all of the running pods
+- `kubectl exec -it <pod name> <cmd>` : Execute the given command in a running pod
+- `kubectl logs <pod name>` : Print out logs from the given pod
+- `kubectl delete pod <pod name>` : Delete the given pod
+- `kubectl apply -f <config file name>` : Tells kubernetes to process the config
+- `kubectl describe pod <pod name>` : Print out some information about the running pod
 
 ## Git Guidelines
 
