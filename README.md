@@ -300,6 +300,12 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
     - Handling batch processing jobs.
     - Rolling out updates and patches to applications with minimal downtime.
 
+- **Deployement commands:**
+    - `kubectl get deployments` : List all the running deployments
+    - `kubctl describe deployment <deplyment name>`: Print out details about a deplyment
+    - `kubectl apply -f <deployment config file name>` : Create deployment out of config file
+    - `kubectl delete deployment <deployment name>` : Delete a deployment
+
 ## Git Guidelines
 
 - Base branch is *main*
