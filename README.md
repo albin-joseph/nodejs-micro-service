@@ -272,6 +272,28 @@ Docker makes it really easy to install and run software without worrying about s
 - `kubectl apply -f <config file name>` : Tells kubernetes to process the config
 - `kubectl describe pod <pod name>` : Print out some information about the running pod
 
+### Deployment in Kubernetes
+
+In Kubernetes, a Deployment is a resource object that provides declarative updates to applications. It is used to manage the creation, scaling, and updating of a group of pods. A Deployment defines the desired state of your application (e.g., the number of replicas, the container image version, etc.) and ensures that the current state matches this desired state.
+
+- **Key Features of a Deployment:**
+    - **Declarative Updates:** You describe the desired state of the application, and Kubernetes ensures that the current state matches it. If the deployment configuration is updated, Kubernetes gradually updates the running application.
+
+    - **Scaling:** A Deployment can automatically scale the number of pod replicas up or down based on load or manually specified configuration.
+
+    - **Self-Healing:** Kubernetes ensures that the specified number of pod replicas are always running. If a pod crashes or a node fails, Kubernetes will automatically replace the failed pods to maintain the desired number.
+
+    - **Rolling Updates:** Deployments support rolling updates, which allow you to update the application without downtime by gradually replacing old pods with new ones. If something goes wrong during the update, Kubernetes can roll back to the previous stable version.
+
+    - **Rollback:** If a deployment fails (e.g., due to a bad image or configuration), Kubernetes can automatically or manually revert to the previous version of the deployment.
+
+- **Key Sections:**
+    - **metadata:** Contains the name and labels of the Deployment.
+    - **spec:**
+        - **replicas:** Specifies the number of pod replicas that should be running.
+        - **selector:** Defines how to identify which pods belong to this deployment.
+        - **template:** Provides the pod template, specifying the containers, images, and other settings for the pods managed by this Deployment.
+
 ## Git Guidelines
 
 - Base branch is *main*
