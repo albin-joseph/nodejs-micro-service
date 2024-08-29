@@ -294,6 +294,12 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
         - **selector:** Defines how to identify which pods belong to this deployment.
         - **template:** Provides the pod template, specifying the containers, images, and other settings for the pods managed by this Deployment.
 
+- **Use Cases:**
+    - Deploying stateless applications like web servers.
+    - Managing microservices with multiple versions.
+    - Handling batch processing jobs.
+    - Rolling out updates and patches to applications with minimal downtime.
+
 ## Git Guidelines
 
 - Base branch is *main*
