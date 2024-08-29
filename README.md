@@ -306,6 +306,22 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
     - `kubectl apply -f <deployment config file name>` : Create deployment out of config file
     - `kubectl delete deployment <deployment name>` : Delete a deployment
 
+- **Types of Services in Kubernetes:**
+    - **ClusterIP (default):**
+        - Exposes the service on a cluster-internal IP.
+        - Only accessible within the cluster.
+        - This is typically used for internal communication between different services in the same cluster.
+    - **NodePort:**
+        - Exposes the service on each node's IP at a static port.
+        - Makes the service accessible externally by requesting <NodeIP>:<NodePort>.
+        - This is useful for development and testing environments.
+    - **LoadBalancer:**
+        - Exposes the service externally using a cloud provider's load balancer.
+        - This automatically provisions a load balancer in cloud environments (like AWS, GCP, Azure) and routes external traffic to the service.
+    - **ExternalName:**
+        - Maps a service to the contents of the externalName field (like a DNS name).
+        - This is used to route traffic to services outside the Kubernetes cluster.
+
 ## Git Guidelines
 
 - Base branch is *main*
