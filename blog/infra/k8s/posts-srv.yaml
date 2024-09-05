@@ -11,3 +11,15 @@ spec:
       protocol: TCP
       port: 4000
       targetPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: event-bus-srv
+spec:
+  selector:
+    app: event-bus
+  ports:
+    - name: event-bus
+      port: 4005
+      targetPort: 4005
