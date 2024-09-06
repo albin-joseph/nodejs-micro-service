@@ -108,9 +108,6 @@ Docker makes it really easy to install and run software without worrying about s
         step2-->step3
         step4["Usable Image"]
         step3-->step4
-        step1 ~~~|"Configuration to define how our container should behave"|step1
-        step3 ~~~|"Take all the configuration and make a usable image"|step3
-        end
 ```
 
 #### How create a Docker file
