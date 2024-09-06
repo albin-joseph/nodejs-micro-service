@@ -103,14 +103,11 @@ Docker makes it really easy to install and run software without worrying about s
     flowchart TB
         step1["Docker File"]
         step2["Docker Client"]
-        step1-->step2
+        step1--Configuration to define how our container should behave-->step2
         step3["Docker Server"]
         step2-->step3
         step4["Usable Image"]
-        step3-->step4
-
-        step1 ~~~|"Configuration to define how our container should behave"|step1
-        step3 ~~~|"Take all the configuration and make a usable image"|step3
+        step3--Take all the configuration and make a usable image-->step4
 ```
 
 #### How create a Docker file
