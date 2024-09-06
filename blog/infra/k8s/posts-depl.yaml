@@ -15,3 +15,15 @@ spec:
       containers:
         - name: posts
           image: blog/posts:0.0.1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: post-clusterip-srv
+spec:
+  selector:
+    app: posts
+  ports:
+    - name: posts
+      port: 4000
+      targetPort: 4000
