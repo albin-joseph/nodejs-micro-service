@@ -123,7 +123,7 @@ Docker makes it really easy to install and run software without worrying about s
     - They comes with a preinstalled set of programs that are useful.
 
 ``` mermaid
-    flowchart TB;
+    flowchart TB
         step1["Specify a base image"]
         step2["Run some commands to install additional programs"]
         step1-->step2
