@@ -320,6 +320,12 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
         - Maps a service to the contents of the externalName field (like a DNS name).
         - This is used to route traffic to services outside the Kubernetes cluster.
 
+- **Load Balancer:**
+    - Tells Kubernetes to reach out to its provider and provision a load balancer. Gets traffic in a single pod.
+
+- **Ingress OR Ingress Controller:**
+    - A pod with a set of routing rules to distribute traffic to other services.
+
 ## Git Guidelines
 
 - Base branch is *main*
