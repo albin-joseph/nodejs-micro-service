@@ -24,8 +24,17 @@ In this we focusing creating a micro service project resolve all the pain points
 ``` mermaid
         erDiagram
             User {
+                int id PK
                 string email
                 string password
+            }
+
+            Order {
+                int id PK
+                int user_id FK
+                int ticket_id FK
+                enum status
+                date expires
             }
 ```
 
