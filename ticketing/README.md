@@ -24,12 +24,14 @@ In this we focusing creating a micro service project resolve all the pain points
 ``` mermaid
         erDiagram
             User ||--|{ Order : "user orders"
+            User ||--|{ Ticket : "user tickets"
             User {
                 int id PK
                 string email
                 string password
             }
 
+            Order ||--||Ticket : "Ticket"
             Order {
                 int id PK
                 int user_id FK
