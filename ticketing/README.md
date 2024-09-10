@@ -36,6 +36,14 @@ In this we focusing creating a micro service project resolve all the pain points
                 enum status
                 date expires
             }
+
+            Ticket {
+                int id PK
+                int user_id FK
+                int order_id FK
+                string title
+                number price
+            }
 ```
 
 
