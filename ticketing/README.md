@@ -31,7 +31,8 @@ In this we focusing creating a micro service project resolve all the pain points
                 string password
             }
 
-            Order ||--||Ticket : "Ticket"
+            Order ||--||Ticket : "ticket"
+            Order ||--|| Charge : "order charge"
             Order {
                 int id PK
                 int user_id FK
