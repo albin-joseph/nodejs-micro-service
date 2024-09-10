@@ -56,4 +56,11 @@ In this we focusing creating a micro service project resolve all the pain points
 
 ```
 
+### Services
+1. **auth:** Everything related to user signup/signin/signout
+2. **tickets:** Tcket creation/editing. Knows whether a ticket can be updated
+3. **orders:** Order creation/editing
+4. **expiration:** Watches for orders to be created, cancels them after 15 minutes
+5. **payments:** Handles credit card payments. Cancels orders if payments failes. Completes if payments suceeds
+
 
