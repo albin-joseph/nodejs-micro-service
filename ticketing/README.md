@@ -23,6 +23,7 @@ In this we focusing creating a micro service project resolve all the pain points
 
 ``` mermaid
         erDiagram
+            User ||--|{ Order
             User {
                 int id PK
                 string email
