@@ -1,4 +1,4 @@
-# NodeJS Micro Servive
+# NodeJS Micro Service
 This repository contains information related to microservices and how to implement them in Node.js. It is created for learning purposes. The information has been gathered from various sources, including the internet, online learning platforms, YouTube, and more.
 
 ### What is micro service and monolith service
@@ -100,16 +100,14 @@ Docker makes it really easy to install and run software without worrying about s
 #### Docker Image creation process
 
 ``` mermaid
-    flowchart TB;
+    flowchart TB
         step1["Docker File"]
-        step1 ~~~|"Configuration to define how our container should behave"|step1
         step2["Docker Client"]
-        step1-->step2
+        step1--Docker File:Configuration to define how our container should behave-->step2
         step3["Docker Server"]
-        step3 ~~~|"Take all the configuration and make a usable image"|step3
         step2-->step3
         step4["Usable Image"]
-        step3-->step4
+        step3--Docker Server:Take all the configuration and make a usable image-->step4
 ```
 
 #### How create a Docker file
@@ -123,7 +121,7 @@ Docker makes it really easy to install and run software without worrying about s
     - They comes with a preinstalled set of programs that are useful.
 
 ``` mermaid
-    flowchart TB;
+    flowchart TB
         step1["Specify a base image"]
         step2["Run some commands to install additional programs"]
         step1-->step2
@@ -151,16 +149,17 @@ Docker makes it really easy to install and run software without worrying about s
         - Docker is a set of platform-as-a-service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. It provides tools and services to create, deploy, and manage containers.
 
 - **Docker Image**
-        - A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Docker images are built using a Dockerfile, which contains instructions for assembling the image. Once built, an image can be shared and reused.
+    - A Docker image is a lightweight, standalone, and executable package that includes everything needed to run a piece of software, including the code, runtime, libraries, environment variables, and configuration files. Docker images are built using a Dockerfile, which contains instructions for assembling the image. Once built, an image can be shared and reused.
 
-        - Immutable: Once an image is created, it doesn’t change. Any updates require creating a new image.
-
-        - Layers: Images are made up of layers, with each layer representing a step in the Dockerfile. Layers are cached, which speeds up the build process.
 
 - **Docker Container**
     - A Docker container is a runtime instance of a Docker image. It is a lightweight, isolated environment where the application runs. Containers are designed to be portable and consistent across different environments, such as development, testing, and production.
 
-    = Isolated: Containers run in their isolated user space, allowing multiple containers to run on the same host without interfering with each other.
+    - Immutable: Once an image is created, it doesn’t change. Any updates require creating a new image.
+
+    - Layers: Images are made up of layers, with each layer representing a step in the Dockerfile. Layers are cached, which speeds up the build process.
+
+    - Isolated: Containers run in their isolated user space, allowing multiple containers to run on the same host without interfering with each other.
 
     - Ephemeral: Containers can be stopped, started, deleted, and recreated easily, making them highly flexible and suitable for dynamic scaling.
      
@@ -170,7 +169,7 @@ Docker makes it really easy to install and run software without worrying about s
         - Docker Container is a running instance of that image.
 
     - **In summary:**
-        - Docker is the tool/platform.**
+        - Docker is the tool/platform.
         - Docker Image is the template.
         - Docker Container is the instance created from the template.
 
@@ -191,9 +190,9 @@ Docker makes it really easy to install and run software without worrying about s
     - Tagging an Image: `docker build -t <docker id>/<repo or project name> : <version>`
     - docker port mapping: `docker run -p <route incomming port>:<port route inside the container> <image name>`
 
-- **What is Kubernetes?**
-    - Kubernetes a tool for running a bunch of different containers.
-    - We give it some configuration to describe how we want our containers to run and interact with each other.
+## Kubernetes
+- Kubernetes a tool for running a bunch of different containers.
+- We give it some configuration to describe how we want our containers to run and interact with each other.
 
 ``` mermaid
     flowchart TB
@@ -219,6 +218,114 @@ Docker makes it really easy to install and run software without worrying about s
         end
 ```
 
+- **Kubernetes Cluster** : A coolections of nodes and a master to manage them.
+- **Node** : A virtual machine that will run our containers.
+- **Pod** : More or less a running container. Technically a pod can run multiple containers.
+- **Deployment** : Monitors a set of pods, make sure they are running and restart them if they crash.
+- **Service** : Provide an easy to remember URL to access a running container.
+
+- **Kubernetes Config Files**
+    - Tells Kubernetes about different Deployments, Pods and Services (referred to as *Objects*)that we want to create.
+    - Config file should be a YAML file
+    - Always store these files with our project source code.
+    - We can create Objects without config files [Do not do this]. Config files provide a precise definition of what your cluster is running.
+    - k8s is the shortform to represent kubernetes. Where we are putting all the kubernetes config files
+    - To create Pod, please run the command on the location where the config file written `kubectl apply -f <config_file_name>.yaml`
+    - To list the pods `kubectl get pods`
+
+### Kubernetes - Understand Pod Specs
+
+``` mermaid
+    flowchart TD;
+        step1["apiVersion: v1"]
+        step1 ~~~|"k8s is extensible-we can add our own custom objects. This specify set of objects we want k8s to llok at"|step1
+        step2["kind:Pod"]
+        step2 ~~~|"The type of object we want to create"|step2
+        step1-->step2
+        step3["metadata"]
+        step3 ~~~|"Config option for the object we are about to create"|step3
+        step2-->step3
+        step4["name:posts"]
+        step4 ~~~|"When pod create give a name 'posts'"|step4
+        step3-->step4
+        step5["spec"]
+        step5 ~~~|"The exact attribute we want to apply to object we are about to create"|step5
+        step4-->step5
+        step6["containers"]
+        step6 ~~~|"We can create many containers in a single pod"|step6
+        step5-->step6
+        step7["name:posts"]
+        step7 ~~~|"Make a container with a name 'posts'"|step7
+        step6-->step7
+        step8["image:blog/posts:0.0.1"]
+        step8 ~~~|"The exact image we want to use"|step8
+        step7-->step8
+```
+
+### Kubernetes Commands
+- `kubectl get pods` : Print out information about all of the running pods
+- `kubectl exec -it <pod name> <cmd>` : Execute the given command in a running pod
+- `kubectl logs <pod name>` : Print out logs from the given pod
+- `kubectl delete pod <pod name>` : Delete the given pod
+- `kubectl apply -f <config file name>` : Tells kubernetes to process the config
+- `kubectl describe pod <pod name>` : Print out some information about the running pod
+
+### Deployment in Kubernetes
+
+In Kubernetes, a Deployment is a resource object that provides declarative updates to applications. It is used to manage the creation, scaling, and updating of a group of pods. A Deployment defines the desired state of your application (e.g., the number of replicas, the container image version, etc.) and ensures that the current state matches this desired state.
+
+- **Key Features of a Deployment:**
+    - **Declarative Updates:** You describe the desired state of the application, and Kubernetes ensures that the current state matches it. If the deployment configuration is updated, Kubernetes gradually updates the running application.
+
+    - **Scaling:** A Deployment can automatically scale the number of pod replicas up or down based on load or manually specified configuration.
+
+    - **Self-Healing:** Kubernetes ensures that the specified number of pod replicas are always running. If a pod crashes or a node fails, Kubernetes will automatically replace the failed pods to maintain the desired number.
+
+    - **Rolling Updates:** Deployments support rolling updates, which allow you to update the application without downtime by gradually replacing old pods with new ones. If something goes wrong during the update, Kubernetes can roll back to the previous stable version.
+
+    - **Rollback:** If a deployment fails (e.g., due to a bad image or configuration), Kubernetes can automatically or manually revert to the previous version of the deployment.
+
+- **Key Sections:**
+    - **metadata:** Contains the name and labels of the Deployment.
+    - **spec:**
+        - **replicas:** Specifies the number of pod replicas that should be running.
+        - **selector:** Defines how to identify which pods belong to this deployment.
+        - **template:** Provides the pod template, specifying the containers, images, and other settings for the pods managed by this Deployment.
+
+- **Use Cases:**
+    - Deploying stateless applications like web servers.
+    - Managing microservices with multiple versions.
+    - Handling batch processing jobs.
+    - Rolling out updates and patches to applications with minimal downtime.
+
+- **Deployement commands:**
+    - `kubectl get deployments` : List all the running deployments
+    - `kubctl describe deployment <deplyment name>`: Print out details about a deplyment
+    - `kubectl apply -f <deployment config file name>` : Create deployment out of config file
+    - `kubectl delete deployment <deployment name>` : Delete a deployment
+
+- **Types of Services in Kubernetes:**
+    - **ClusterIP (default):**
+        - Exposes the service on a cluster-internal IP.
+        - Only accessible within the cluster.
+        - This is typically used for internal communication between different services in the same cluster.
+    - **NodePort:**
+        - Exposes the service on each node's IP at a static port.
+        - Makes the service accessible externally by requesting <NodeIP>:<NodePort>.
+        - This is useful for development and testing environments.
+    - **LoadBalancer:**
+        - Exposes the service externally using a cloud provider's load balancer.
+        - This automatically provisions a load balancer in cloud environments (like AWS, GCP, Azure) and routes external traffic to the service.
+    - **ExternalName:**
+        - Maps a service to the contents of the externalName field (like a DNS name).
+        - This is used to route traffic to services outside the Kubernetes cluster.
+
+- **Load Balancer:**
+    - Tells Kubernetes to reach out to its provider and provision a load balancer. Gets traffic in a single pod.
+
+- **Ingress OR Ingress Controller:**
+    - A pod with a set of routing rules to distribute traffic to other services.
+
 ## Git Guidelines
 
 - Base branch is *main*
@@ -231,4 +338,3 @@ Docker makes it really easy to install and run software without worrying about s
 - To create tag: `git tag -a <tag_name> -m "<Tag message>"`
 - To push all tags: `git push origin --tags`
 - To list all tags: `git tag`
-
