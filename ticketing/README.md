@@ -10,5 +10,14 @@ In this we focusing creating a micro service project resolve all the pain points
 - Run a k8s cluster in the cloud and develop on it almost as quickly as local
 - Introduce a lot of code to handle concurrency issues
 
+## Ticketing App
+
+1. Users can list a ticket for an event(concert, sports) for sale.
+2. Other users can purchase this ticket.
+3. Any user can list ticket for sale and purchase ticket.
+4. When a user attempt to purchase a ticket, the ticket is *locked* for 15 minutes. The user has 15 minutes to enter their payment info.
+5. While locked, no other user can purchase the ticket. After 15 minutes, the ticket should unlock.
+6. Tcket prices can be edited if they are not locked.
+
 
 
