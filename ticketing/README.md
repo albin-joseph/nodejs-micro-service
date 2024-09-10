@@ -19,5 +19,14 @@ In this we focusing creating a micro service project resolve all the pain points
 5. While locked, no other user can purchase the ticket. After 15 minutes, the ticket should unlock.
 6. Tcket prices can be edited if they are not locked.
 
+### ER Diagram
+
+``` mermaid
+        erDiagram
+            User {
+                string email
+                string password
+            }
+```
 
 
