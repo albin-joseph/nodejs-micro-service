@@ -44,6 +44,16 @@ In this we focusing creating a micro service project resolve all the pain points
                 string title
                 number price
             }
+
+             Charge {
+                int id PK
+                int order_id FK
+                enum status
+                number amount
+                string stripe_id
+                string stripe_refund_id
+            }
+
 ```
 
 
