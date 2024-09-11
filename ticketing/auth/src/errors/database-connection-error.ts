@@ -1,8 +1,7 @@
 export class DatabaseConnectionError extends Error {
-    reason = 'Error connecting Database'
+    reason = 'Error connecting to database'
     constructor() {
-        super()
-
-        Object.setPrototypeOf(this, DatabaseConnectionError.prototype)
+        super();
+        Object.setPrototypeOf(this, DatabaseConnectionError.prototype);
     }
 }
