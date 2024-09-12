@@ -67,4 +67,28 @@ In this we focusing creating a micro service project resolve all the pain points
 4. **expiration:** Watches for orders to be created, cancels them after 15 minutes
 5. **payments:** Handles credit card payments. Cancels orders if payments failes. Completes if payments suceeds
 
+### Auth Service
 
+ ``` mermaid
+    flowchart LR;
+
+        subgraph MongoDB
+        step21["Mongo DB instance"]
+        end
+        
+        subgraph Auth service
+        step11["express app"]
+        step12["mongoose"]
+        end
+
+        subgraph React App
+        step1["React web app"]
+        end
+
+        step1--{email, password}-->step11
+        step11-->step12
+        step12-->step11
+
+        step12-->step21
+        step21-->step12
+```
