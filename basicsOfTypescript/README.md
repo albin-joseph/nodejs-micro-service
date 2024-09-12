@@ -1,7 +1,8 @@
 # Basics of Typescript
 
-Typescript =  Javascript + A type system
-
+```
+    Typescript =  Javascript + A type system
+```
 **The Type System**
 
 - Help us catch errors *during development*
