@@ -101,3 +101,9 @@ In this we focusing creating a micro service project resolve all the pain points
     - Authentication/Authorization mechanism
     - Stores any data we want
     - We have to manage it manually
+- **Our Auth Mechanism Requirement:**
+    - Must be able to tell us details about a user
+    - Must be able to handle authorization info
+    - Must have a built-in, tamper-resistant way to expire or invalidate itself
+    - Must be easily understood between different languages
+    - Must not require some kind of backing data store on the server
