@@ -92,3 +92,12 @@ In this we focusing creating a micro service project resolve all the pain points
         step12-->step21
         step21-->step12
 ```
+
+- **Cookies:**
+    - Transport mechanism
+    - Moves any kind of data between browser and server
+    - Automatically managed by the browser
+- **JWT's:**
+    - Authentication/Authorization mechanism
+    - Stores any data we want
+    - We have to manage it manually
