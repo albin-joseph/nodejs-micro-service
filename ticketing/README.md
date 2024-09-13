@@ -107,3 +107,4 @@ In this we focusing creating a micro service project resolve all the pain points
     - Must have a built-in, tamper-resistant way to expire or invalidate itself
     - Must be easily understood between different languages
     - Must not require some kind of backing data store on the server
+    - The above all usecase satisfy when we are using JWT+cookies based authentication/autherization logic
