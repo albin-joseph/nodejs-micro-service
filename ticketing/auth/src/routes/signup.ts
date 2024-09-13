@@ -32,7 +32,7 @@ router.post('/api/users/signup', [
         const user = User.build({email, password});
         await user.save();
       
-        res.status(200).send(user)
+        res.status(201).send(user)
     });
 
 export { router as signupRouter };
