@@ -92,3 +92,19 @@ In this we focusing creating a micro service project resolve all the pain points
         step12-->step21
         step21-->step12
 ```
+
+- **Cookies:**
+    - Transport mechanism
+    - Moves any kind of data between browser and server
+    - Automatically managed by the browser
+- **JWT's:**
+    - Authentication/Authorization mechanism
+    - Stores any data we want
+    - We have to manage it manually
+- **Our Auth Mechanism Requirement:**
+    - Must be able to tell us details about a user
+    - Must be able to handle authorization info
+    - Must have a built-in, tamper-resistant way to expire or invalidate itself
+    - Must be easily understood between different languages
+    - Must not require some kind of backing data store on the server
+    - The above all usecase satisfy when we are using JWT+cookies based authentication/autherization logic
