@@ -108,3 +108,10 @@ In this we focusing creating a micro service project resolve all the pain points
     - Must be easily understood between different languages
     - Must not require some kind of backing data store on the server
     - The above all usecase satisfy when we are using JWT+cookies based authentication/autherization logic
+
+- **Test with microservices**
+    - Scope of our tests
+        - Test a single piece of code in isolation
+        - Test how different piece of code work together
+        - Test how differnt component work together
+        - Test how different services work together
