@@ -9,16 +9,18 @@ beforeAll(async () => {
 
     await mongoose.connect(mongoUri, {});
 
-    beforeEach(async () => {
-        if (mongoose.connection.db) {
-            const collections = await mongoose.connection.db.collections();
-         
-            for (let collection of collections) {
-              await collection.deleteMany({});
-            }
-          }
-    });
+    process.env.JWT_KEY = 'asdfasdf';
 });
+
+beforeEach(async () => {
+    if (mongoose.connection.db) {
+      const collections = await mongoose.connection.db.collections();
+   
+      for (let collection of collections) {
+        await collection.deleteMany({});
+      }
+    }
+  });
 
 afterAll(async () => {
     if (mongo) {
