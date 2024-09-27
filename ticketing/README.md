@@ -144,4 +144,18 @@ In this we focusing creating a micro service project resolve all the pain points
             - git:-https://github.com/albin-joseph/common
             - npm:-https://www.npmjs.com/package/@ajauthticket/common
             
-        
+
+## Ticket Service
+
+
+
+## NB: How to create a service and Configure
+    - Create a directory and nvaigate to
+    - Create package.json, install deps
+    - Write Dockerfile
+    - Write .dockerignore file
+    - Creare index.ts to run project
+    - Build image, push to docker hub
+    - Write k8s file for deployment, service
+    - Update skaffold.yaml to do file sync for tickets
+    - Write k8s file for MongoDB deployment, service
