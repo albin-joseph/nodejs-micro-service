@@ -140,4 +140,8 @@ In this we focusing creating a micro service project resolve all the pain points
         - Visit our npm account verify organization under new package published.
         - To update the package version/increment the version please execute command `npm version patch`
             - Thi command will open the package.json and update the version to next.
+        - Refer:
+            - git:-https://github.com/albin-joseph/common
+            - npm:-https://www.npmjs.com/package/@ajauthticket/common
+            
         
