@@ -145,7 +145,7 @@ In this we focusing creating a micro service project resolve all the pain points
             - npm:-https://www.npmjs.com/package/@ajauthticket/common
             
 
-## Ticket Service
+## Tickets Service
 
 
 
@@ -155,7 +155,9 @@ In this we focusing creating a micro service project resolve all the pain points
     - Write Dockerfile
     - Write .dockerignore file
     - Creare index.ts to run project
-    - Build image, push to docker hub
+    - Build image, push to docker hub 
+        - `docker build -t <docker_username>/<image name> .`
+        - `docker push <docker_username>/<image name>`
     - Write k8s file for deployment, service
     - Update skaffold.yaml to do file sync for tickets
     - Write k8s file for MongoDB deployment, service
