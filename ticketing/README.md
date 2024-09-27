@@ -138,3 +138,6 @@ In this we focusing creating a micro service project resolve all the pain points
             - If any authentication error happend please execute the command `npm login` and enter credential or proceed the instruction.
             - After successful login, publish command execute again.
         - Visit our npm account verify organization under new package published.
+        - To update the package version/increment the version please execute command `npm version patch`
+            - Thi command will open the package.json and update the version to next.
+        
