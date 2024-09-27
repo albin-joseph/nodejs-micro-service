@@ -115,3 +115,26 @@ In this we focusing creating a micro service project resolve all the pain points
         - Test how different piece of code work together
         - Test how differnt component work together
         - Test how different services work together
+- **Code sharing and reusing between the services**
+    - Options
+        - Direct copy paste - [Not a suggested option]
+        - Git submodule - [Little bit challenging]
+        - NPM package - [Recommended way]
+    - **NPM Package**
+        - We can publish package to a Pubic and Private Registry
+            - Public
+                - It avaialble and visble to public
+                - Also in public we can publish inside an organization. A person who is the member of the organisation can access. We need to pay extra money
+            - Private
+                - Private or dedicate person can access. We need to pay money
+        - We are going with the public organization.
+    - **How to publishing an npm package in public organisation**
+        - Create an npm account
+        - Create a public organization in our account
+        - Then start npm project and setup git
+        - After commit the project to git publish the package to npm registary. Before publising please ensure following thing
+            - package.json file name parameter updated with *@<npmorgname>/<packagename>*
+        - Execute the command in terminal `npm publish --access public`
+            - If any authentication error happend please execute the command `npm login` and enter credential or proceed the instruction.
+            - After successful login, publish command execute again.
+        - Visit our npm account verify organization under new package published.
