@@ -12,10 +12,12 @@ spec:
       labels:
         app: tickets
     spec:
-      containers:
+      containers: 
         - name: tickets
           image: albinjoseph007/tickets
           env:
+            - name: MONGO_URI
+              value: 'mongodb://tickets-mongo-srv:27017/tickets'
             - name: JWT_KEY
               valueFrom:
                 secretKeyRef:
