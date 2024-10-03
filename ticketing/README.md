@@ -60,6 +60,41 @@ In this we focusing creating a micro service project resolve all the pain points
 
 ```
 
+### Architecture
+
+``` mermaid
+    graph TD
+    subgraph Client
+        Browser --> NextJS
+    end
+
+    subgraph MicroServices
+        API[API Gateway] --> Common[Common Middleware Error handler]
+        Common --> AuthService[Authentication Service]
+        Common --> TicketService[Ticket Service]
+        Common --> OrderService[Order Service]
+        Common --> PaymentService[Payment Service]
+        Common --> ExpirationService[Expiration Service]
+        AuthService --> UserDB[(User-mongoDB)]
+        TicketService --> TicketDB[(Ticket-mongoDB)]
+        OrderService --> OrderDB[(Order-mongoDB)]
+        PaymentService --> Payment[(Payment-mongoDB)]
+        ExpirationService --> Expiration[(Expiration-Redis)]
+        NATS[NATS Streaming Server] --> AuthService
+        NATS --> TicketService
+        NATS --> OrderService
+        NATS --> PaymentService
+        NATS --> ExpirationService
+    end
+
+    subgraph ExternalServices
+        PaymentGateway[Payment Gateway] --> PaymentService
+    end
+
+    Client --> API
+
+```
+
 ### Services
 1. **auth:** Everything related to user signup/signin/signout
 2. **tickets:** Tcket creation/editing. Knows whether a ticket can be updated
