@@ -12,7 +12,7 @@ it('return a 404 if the provided id does not exist', async () => {
         price: 20
     })
     .expect(404);
-})
+});
 
 it('return a 401 if the user is not authenticated', async () => {
     const id = new mongoose.Types.ObjectId().toHexString();
@@ -23,7 +23,7 @@ it('return a 401 if the user is not authenticated', async () => {
         price: 20
     })
     .expect(401);
-})
+});
 
 it('return a 401 if the user is not owned the ticket', async () => {
   const response =  await request(app)
@@ -42,12 +42,39 @@ it('return a 401 if the user is not owned the ticket', async () => {
     price: 100
    })
    .expect(401)
-})
+});
 
 it('return a 400 if the provided the invalid title or price', async () => {
+    const cookie = global.signin();
 
-})
+    const response =  await request(app)
+    .post('/api/tickets')
+    .set('Cookie', cookie)
+    .send({
+        title: 'asdfgh',
+        price: 20
+    });
+
+    await request(app)
+    .put(`/api/tickets/${response.body.id}`)
+    .set('Cookie', cookie)
+    .send({
+     title: '',
+     price: 20
+    })
+    .expect(400);
+
+    await request(app)
+    .put(`/api/tickets/${response.body.id}`)
+    .set('Cookie', cookie)
+    .send({
+     title: 'asasad',
+     price: -10
+    })
+    .expect(400);
+
+});
 
 it('update the ticket if provided the valid inputs', async () => {
 
-})
+});
