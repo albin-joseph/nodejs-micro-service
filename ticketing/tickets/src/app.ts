@@ -6,6 +6,7 @@ import { errorHandler, NotFoundError, currentUser } from "@ajauthticket/common";
 
 import {createTicketRouter} from './routes/new';
 import { showTicketRouter } from "./routes/show";
+import { indexTicketRouter } from "./routes/index";
 
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(currentUser);
 
 app.use(createTicketRouter);
 app.use(showTicketRouter);
+app.use(indexTicketRouter);
 
 app.all('*', async (req, res) => {
     throw new NotFoundError();

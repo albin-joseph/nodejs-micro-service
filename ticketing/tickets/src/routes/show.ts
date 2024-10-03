@@ -1,6 +1,5 @@
 import express, {Request, Response} from 'express';
-import {body} from 'express-validator';
-import {NotAutherizedError, NotFoundError} from '@ajauthticket/common';
+import {NotFoundError} from '@ajauthticket/common';
 import { Ticket } from '../models/ticket';
 
 const router = express.Router();
