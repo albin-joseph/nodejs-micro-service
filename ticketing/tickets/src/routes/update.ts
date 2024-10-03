@@ -29,6 +29,12 @@ router.put('/api/tickets/:id', requireAuth, [
         throw new NotAutherizedError();
     }
 
+    ticket.set({
+        title: req.body.title,
+        price: req.body.price
+    });
+    await ticket.save();
+
     res.send(ticket)
 })
 
