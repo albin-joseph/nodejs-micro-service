@@ -187,7 +187,7 @@ Docker makes it really easy to install and run software without worrying about s
     - Stop a container: `docker stop <container id>`
     - Kill a container: `docker kill <container id>`
     - Executing commands in running containers: `docker exec -t <container id> <command>`
-    - Tagging an Image: `docker build -t <docker id>/<repo or project name> : <version>`
+    - Tagging an Image: `docker build -t <docker id>/<repo or project name> : <version>` 
     - docker port mapping: `docker run -p <route incomming port>:<port route inside the container> <image name>`
 
 ## Kubernetes
@@ -338,3 +338,4 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
 - To create tag: `git tag -a <tag_name> -m "<Tag message>"`
 - To push all tags: `git push origin --tags`
 - To list all tags: `git tag`
+
