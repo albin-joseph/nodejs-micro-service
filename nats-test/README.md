@@ -28,9 +28,18 @@
 ### NATS Streaming Server
 
 ``` mermaid
-        graph TD
+        graph TB
             subgraph NATS Streaming
                 subgraph List of Channels
+                    subgraph ticket:created
+                    end
+                end
+                subgraph List of Clients
+                    direction TB
+                    subgraph abc
+                    end
+                    subgraph 123
+                    end
                 end
             end
 ```
