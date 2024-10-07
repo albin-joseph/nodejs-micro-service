@@ -1,0 +1,19 @@
+{
+  "name": "nats-test",
+  "version": "1.0.0",
+  "description": "- Create a new subproject with typescript support - Install node-nats-streaming library and connect to nats streaming server - We should have two npm scripts, one to run code to emit events, and one to run code to listen for events - The program will be ran outside of kubernetes!",
+  "main": "index.js",
+  "scripts": {
+    "publish": "ts-node-dev --rs --notify false src/publisher.ts",
+    "listern": "ts-node-dev --rs --notify false src/listerner.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.7.4",
+    "node-nats-streaming": "^0.3.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.2"
+  }
+}
