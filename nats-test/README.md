@@ -54,7 +54,16 @@
     - Only one update happens at a time. It's a draw back
 - **Last event processed tacked by resource ID**
 
+### Event based updates
+
 ```mermaid
+    graph LR
+        A[Network Request to Create/Update/Delete Resources XYZ] --> B[Service that owns XYZ]
+        B --> C[(Database Storing XYZ)]
+        C --> B
+        B --> D[Event Describing Change to XYZ]
+        D --> E[NATS]
+        E --Event--> F[Service that needs to update its data based up on the Event]
 
 ```
 
