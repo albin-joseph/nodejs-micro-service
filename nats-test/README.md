@@ -47,3 +47,4 @@
 - **Publisher**: Publish the subject:data to NATS streaming channel
 - **Listerner**: Any service subscribe the chaannel listern the channel get the subject:data
 - **port-forwarding**: kubectl port-forward nats-depl-647c78564d-xtbz6 4222:4222 (To get pod name `kubectl get pods`)
+
