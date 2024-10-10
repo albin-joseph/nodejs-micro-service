@@ -182,6 +182,28 @@ In this we focusing creating a micro service project resolve all the pain points
 
 ## Tickets Service
 
+### NATS
+
+```mermaid
+    graph TD
+        subgraph Defined in common module
+        A[Enum Subjects]
+        B[Class Listener]
+        C[Interface TicketUpdateEvent]
+        end
+
+        subgraph Defined in payment service
+        AA[Class TicketCreatedListener]
+        end
+
+        subgraph Defined in tickets service
+        BB[Class OrderUpdateListener]
+        end
+
+        B-->AA
+        B-->BB
+```
+
 
 
 ## NB: How to create a service and Configure
