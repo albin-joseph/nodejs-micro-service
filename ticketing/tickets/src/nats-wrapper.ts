@@ -14,13 +14,21 @@ class NatsWrapper {
     connect(clusterId: string, clientId: string, url: string) {
         this._client = nats.connect(clusterId, clientId, {url});
 
+        this._client.on('close', () => {
+            console.log('NATS connection closed!');
+            process.exit();
+        });
+
+        process.on('SIGINT', () => this.client.close());
+        process.on('SIGTERM', () => this.client.close());
+
         return new Promise<void>((resolve, reject) => {
-            this._client!.on('connect', () => {
+            this.client.on('connect', () => {
                 console.log('Connected to NATS');
                 resolve();
             });
 
-            this._client!.on('error', (err) => {
+            this.client.on('error', (err) => {
                 reject(err);
             });
 
