@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import { OrderStatus } from "@ajauthticket/common";
 import { TicketDoc } from "./ticket";
 
+export { OrderStatus }
 interface OrderAttrs {
     userId: string;
     status: OrderStatus;
