@@ -204,6 +204,39 @@ In this we focusing creating a micro service project resolve all the pain points
         B-->BB
 ```
 
+### Order Service
+
+```mermaid
+    graph TD
+        subgraph Order-Service
+            
+            subgraph Order
+                    W[userId]
+                    X[status]
+                    Y[expiresAt]
+                    Z[ticketId]
+                end
+
+            subgraph TicketInOrderService
+                    P[title]
+                    Q[price]
+                    R[version]
+                end
+        end
+
+        subgraph Ticket-Service
+            subgraph Ticket
+                A[title]
+                B[price]
+                C[userdId]
+                D[version]
+            end
+        end
+
+        Z --> TicketInOrderService
+        Ticket-Service --Event ticket:created--> Order-Service
+        Ticket-Service --Event ticket:updated--> Order-Service
+```
 
 
 ## NB: How to create a service and Configure
