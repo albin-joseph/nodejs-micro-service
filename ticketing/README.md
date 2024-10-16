@@ -204,6 +204,46 @@ In this we focusing creating a micro service project resolve all the pain points
         B-->BB
 ```
 
+### Order Service
+
+```mermaid
+    graph TD
+        subgraph Order-Service
+            
+            subgraph Order
+                    W[userId]
+                    X[status]
+                    Y[expiresAt]
+                    Z[ticketId]
+                end
+
+            subgraph TicketInOrderService
+                    P[title]
+                    Q[price]
+                    R[version]
+                end
+        end
+
+        subgraph Ticket-Service
+            subgraph Ticket
+                A[title]
+                B[price]
+                C[userdId]
+                D[version]
+            end
+        end
+
+        Z --> TicketInOrderService
+        Ticket-Service --Event ticket:created--> Order-Service
+        Ticket-Service --Event ticket:updated--> Order-Service
+```
+#### orders
+| Route     | Method |      Body        |       Purpose     |
+|:----------|:-------|:-----------------|:------------------|
+| /api/orders| GET   |   -              | Retrieve all active orders for the given user making the request |
+| /api/orders/:id| GET | -              | Get details about a specific order |
+| /api/orders| POST  | {ticketId: string} | Create an order to purchase the specific ticket |
+| /api/orders/:id | DELETE | -          | Cancel the order |
 
 
 ## NB: How to create a service and Configure
