@@ -248,6 +248,7 @@ In this we focusing creating a micro service project resolve all the pain points
 ### QueueGroup
 - QueueGroup ensure an event going to a either one of the service
 - QueueGroup name avoid typos. We need to define this in a common place and import it and use
+- We can resolve the concurrency issue by using event versioning
 
 
 ## NB: How to create a service and Configure
