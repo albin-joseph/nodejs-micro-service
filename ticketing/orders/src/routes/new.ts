@@ -43,7 +43,7 @@ router.post('/api/orders', requireAuth, [
         userId: req.currentUser!.id,
         status: OrderStatus.Created,
         expiresAt: expiration,
-        ticket: ticket
+        ticket
     });
     await order.save();
     //Publish an event saying that an ordr was created
