@@ -9,7 +9,6 @@ export class TicketUpdatedListener extends Listener<TicketUpdatedEvent> {
     queGroupName = queueGroupName;
 
     async onMessage(data: TicketUpdatedEvent['data'], msg: Message) {
-        console.log(`>>>>>>>>>>>>>>>>>>.${JSON.stringify(data)}----------${data}`)
        const ticket = await Ticket.findByEvent(data);
 
        if(!ticket) {

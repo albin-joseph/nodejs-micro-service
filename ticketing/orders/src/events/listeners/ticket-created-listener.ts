@@ -9,7 +9,6 @@ export class TicketCreatedListener extends Listener<TicketCreatedEvent> {
     queGroupName = queueGroupName;
 
     async onMessage(data: TicketCreatedEvent['data'], msg: Message) {
-        console.log(`CREATED -----${JSON.stringify(data)}`)
        const {id, title, price} = data;
        const ticket = Ticket.build({
         id,
