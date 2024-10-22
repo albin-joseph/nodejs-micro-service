@@ -43,12 +43,13 @@ router.post('/api/orders', requireAuth, [
         userId: req.currentUser!.id,
         status: OrderStatus.Created,
         expiresAt: expiration,
-        ticket: ticket
+        ticket
     });
     await order.save();
     //Publish an event saying that an ordr was created
     new OrderCreatedPublisher(natsWrapper.client).publish({
         id: order.id,
+        version: order.version,
         status: order.status,
         userId: order.userId,
         expiresAt: order.expiresAt.toISOString(),
