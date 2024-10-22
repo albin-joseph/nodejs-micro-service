@@ -4,7 +4,8 @@ import {
     validateRequest,
     NotFoundError,
     requireAuth,
-    NotAutherizedError
+    NotAutherizedError,
+    BadRequestError
 } from '@ajauthticket/common';
 
 import { Ticket } from '../models/ticket';
@@ -29,6 +30,10 @@ router.put('/api/tickets/:id', requireAuth, [
 
     if(ticket.userId !== req.currentUser!.id) {
         throw new NotAutherizedError();
+    }
+
+    if(ticket.orderId) {
+        throw new BadRequestError('Cannot edit a reserved ticket');
     }
 
     ticket.set({
