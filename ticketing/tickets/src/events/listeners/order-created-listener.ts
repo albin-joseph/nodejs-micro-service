@@ -17,6 +17,7 @@ export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
             throw new Error('Ticket not found');
         }
 
+        console.log(data)
         //Mark the ticket as being reserved by setting its order property 
         ticket.set({orderId: data.id});
 
@@ -24,12 +25,12 @@ export class OrderCreatedListener extends Listener<OrderCreatedEvent> {
         await ticket.save();
         await new TicketUpdatedPublisher(this.client).publish({
             id: ticket.id,
-            version: ticket.version,
-            title: ticket.title,
             price: ticket.price,
+            title: ticket.title,
             userId: ticket.userId,
-            orderId: ticket.orderId
-        });
+            orderId: ticket.orderId,
+            version: ticket.version,
+          });
 
         //ack the message
         msg.ack();
