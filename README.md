@@ -333,7 +333,7 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
 - To stage the chnages: `git add .`
 - To commit changes: `git commit -am <commit message>`
 - To push the changes to remote: `git push`
-    - If new branch is not in remote: `git branch --set-upstream-to=<remote>/<branch>`
+- If new branch is not in remote: `git branch --set-upstream-to=<remote>/<branch>`
 - To change branch: `git checkout <branch name>`
 - To create tag: `git tag -a <tag_name> -m "<Tag message>"`
 - To push all tags: `git push origin --tags`
