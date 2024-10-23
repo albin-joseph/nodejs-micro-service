@@ -250,6 +250,28 @@ In this we focusing creating a micro service project resolve all the pain points
 - QueueGroup name avoid typos. We need to define this in a common place and import it and use
 - We can resolve the concurrency issue by using event versioning
 
+### Expiration Service
+- Expiration service for checking and handling the ticket booking expiration timeout handling
+
+```mermaid
+    graph TD
+        subgraph order:created
+        end
+        subgraph Expiration-Service
+            A[Remind me to do something 15 minutes from now]
+            B[Bull JS]
+            A-->B
+        end
+        order:created --> Expiration-Service
+        subgraph expiration:complete
+        end
+        Expiration-Service --> expiration:complete
+        subgraph Redis-Server
+            X[List of jobs]
+        end
+        B-->Redis-Server
+```
+
 
 ## NB: How to create a service and Configure
     - Create a directory and nvaigate to
