@@ -272,6 +272,26 @@ In this we focusing creating a micro service project resolve all the pain points
         B-->Redis-Server
 ```
 
+### Payments Service
+- This service for handling the payments for the orders
+
+```mermaid
+    flowchart TD
+        subgraph order:created
+        end
+        subgraph order:cancelled
+        end
+        subgraph payment-service
+            A[Charges]
+            B[Orders]
+        end
+        subgraph charge:created
+        end
+        order:created --> payment-service
+        order:cancelled --> payment-service
+        payment-service --> charge:created
+```
+
 
 ## NB: How to create a service and Configure
     - Create a directory and nvaigate to
