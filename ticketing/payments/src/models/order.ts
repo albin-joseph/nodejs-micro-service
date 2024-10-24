@@ -1,4 +1,5 @@
 import { OrderStatus } from "@ajauthticket/common";
+import { updateIfCurrentPlugin } from "mongoose-update-if-current";
 import mongoose, { version } from "mongoose";
 
 interface OrderAttrs {
@@ -41,6 +42,9 @@ const OrderSchema = new mongoose.Schema({
         }
     }
 });
+
+OrderSchema.set('versionKey', 'version');
+OrderSchema.plugin(updateIfCurrentPlugin);
 
 OrderSchema.statics.build = (attrs: OrderAttrs) => {
     return new Order({
