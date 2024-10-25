@@ -20,7 +20,7 @@ it('implements optimistic concurrency control', async () => {
     secondInstance!.set({print: 15})
 
     //Save the first fetched ticket
-    firstInstance!.save();
+    await firstInstance!.save();
 
     //save the second fetched ticket and expect an error
     try {
