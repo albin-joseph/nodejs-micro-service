@@ -3,6 +3,7 @@ import 'express-async-errors';
 import {json} from 'body-parser';
 import cookieSession from "cookie-session";
 import { errorHandler, NotFoundError, currentUser } from "@ajauthticket/common";
+import { createChargeRouter } from "./routes/new";
 
 
 
@@ -15,6 +16,7 @@ app.use(cookieSession({
 }));
 
 app.use(currentUser);
+app.use(createChargeRouter);
 
 
 
