@@ -1,7 +1,7 @@
 import { OrderCreatedEvent, OrderStatus } from "@ajauthticket/common";
 import { natsWrapper } from "../../../nats-wrapper";
 import { OrderCreatedListener } from "../order-created-listener";
-import mongoose, { set } from "mongoose";
+import mongoose from "mongoose";
 import { Message } from "node-nats-streaming";
 import { Order } from "../../../models/order";
 
