@@ -43,7 +43,7 @@ router.post('/api/payments', requireAuth, [
         source: token,
     })
 
-    res.send({Success: true})
+    res.status(201).send({Success: true})
 });
 
 export {router as createChargeRouter}
