@@ -8,8 +8,8 @@ import {
      NotAutherizedError,
      OrderStatus
 } from '@ajauthticket/common';
-
 import { Order } from '../models/order';
+import { stripe } from '../stripe';
 
 const router = express.Router();
 
@@ -36,6 +36,12 @@ router.post('/api/payments', requireAuth, [
     if(order.status === OrderStatus.Cancelled) {
         throw new BadRequestError('Cannot pay for a cancelled order');
     }
+
+    await stripe.charges.create({
+        currency: 'usd',
+        amount: order.price * 100,
+        source: token,
+    })
 
     res.send({Success: true})
 });
