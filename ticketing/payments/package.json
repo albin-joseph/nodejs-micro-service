@@ -18,7 +18,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@ajauthticket/common": "^1.0.9",
+    "@ajauthticket/common": "^1.0.10",
     "@types/cookie-session": "^2.0.49",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
