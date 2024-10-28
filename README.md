@@ -303,6 +303,7 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
     - `kubctl describe deployment <deplyment name>`: Print out details about a deplyment
     - `kubectl apply -f <deployment config file name>` : Create deployment out of config file
     - `kubectl delete deployment <deployment name>` : Delete a deployment
+    - `kubectl create secret generic <name of the secret> --from-literal <key> = <key_value>`
 
 - **Types of Services in Kubernetes:**
     - **ClusterIP (default):**
