@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Router from 'next/router';
 import useRequest from '../../hooks/use-request';
 
 const NewTicket = () => {
@@ -12,7 +13,7 @@ const NewTicket = () => {
             title,
             price
         },
-        onSuccess: (ticket) => console.log(JSON.stringify(ticket))
+        onSuccess: () => Router.push('/')
     });
 
     const onBlur = () => {
