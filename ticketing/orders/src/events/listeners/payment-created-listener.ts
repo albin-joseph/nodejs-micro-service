@@ -3,7 +3,7 @@ import { queueGroupName } from "./queue-group-name";
 import { Message } from "node-nats-streaming";
 import { Order } from "../../models/order";
 
-export class PaymentCraetedListener extends Listener<PaymentCreatedEvent> {
+export class PaymentCreatedListener extends Listener<PaymentCreatedEvent> {
     subject: Subjects.PaymentCreated = Subjects.PaymentCreated;
     queGroupName = queueGroupName
 
