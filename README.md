@@ -327,6 +327,31 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
 - **Ingress OR Ingress Controller:**
     - A pod with a set of routing rules to distribute traffic to other services.
 
+## Deployment
+
+```mermaid
+    graph TD
+        subgraph LocalMachine
+            A[Make chnage to code]
+            B[Commit chnage to a git branch</br> any besides main/master]
+            C[Push branch to github]
+            A-->B
+            B-->C
+        end
+        subgraph Guthub
+            P[Github receives updated branch]
+            Q[You manually create a pull request to merge branch to master/main]
+            R[Github automatically runs tests for project]
+            S[After test pass, you merge the PR into master branch]
+            T[Because master branch has changed, github builds and deploys]
+            P-->Q
+            Q-->R
+            R-->S
+            S-->T
+        end
+        C-->P
+```
+
 ## Git Guidelines
 
 - Base branch is *main*
