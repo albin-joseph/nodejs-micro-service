@@ -352,6 +352,27 @@ In Kubernetes, a Deployment is a resource object that provides declarative updat
         C-->P
 ```
 
+### Github Actions
+
+```mermaid
+    graph
+        A[Code Pushed]
+        B[Pull Request Created]
+        C[Pull Request Closed]
+        D[Repository is Forked]
+
+        E[Event]
+
+        F[Run a Github Action]
+
+        A---->E
+        B---->E
+        C---->E
+        D---->E
+        E---->F
+
+```
+
 ## Git Guidelines
 
 - Base branch is *main*
