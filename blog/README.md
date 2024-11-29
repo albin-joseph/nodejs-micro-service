@@ -51,5 +51,3 @@ We are going to implement the event service. We are going to add two services fo
     - This will aggregate the service
 - *moderation Micro Service*
     - This service is using for moderate the comments.
-
-    
