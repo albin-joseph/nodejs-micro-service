@@ -10,3 +10,4 @@
   - Distribute system means it's not execute from the single place, the entire system distributed different location(around the world)
   - What is design patterns?
     - A design pattern is a reusable solution to a common problem in software design. 
+
